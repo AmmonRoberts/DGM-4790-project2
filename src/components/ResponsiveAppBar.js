@@ -25,7 +25,7 @@ import { TradingCard } from '../models'
 // Amplify.configure(awsExports);
 Amplify.configure(process.env.AWS_EXPORTS);
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+const settings = ['Profile', 'Account', 'Dashboard']
 
 const ResponsiveAppBar = ({ user, signOut }) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -221,7 +221,7 @@ const ResponsiveAppBar = ({ user, signOut }) => {
                   <Typography textAlign='center'>{setting}</Typography>
                 </MenuItem>
               ))}
-              {/* <MenuItem onClick={signOut}>Logout</MenuItem> */}
+              <MenuItem onClick={signOut}>Logout</MenuItem>
             </Menu>
           </Box>
         </Toolbar>
