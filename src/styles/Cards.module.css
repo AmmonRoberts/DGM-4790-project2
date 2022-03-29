@@ -1,0 +1,7 @@
+.searchResultCards {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+  padding: 10;
+}
