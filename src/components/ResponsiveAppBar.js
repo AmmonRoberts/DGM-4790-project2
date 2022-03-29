@@ -23,7 +23,7 @@ import { DataStore } from 'aws-amplify'
 import { TradingCard } from '../models'
 
 // Amplify.configure(awsExports);
-Amplify.configure(process.env.AWS_EXPORTS);
+// Amplify.configure(process.env.AWS_EXPORTS);
 
 const settings = ['Profile', 'Account', 'Dashboard']
 

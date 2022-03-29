@@ -7,8 +7,8 @@ import { Authenticator } from '@aws-amplify/ui-react'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import '@aws-amplify/ui-react/styles.css';
 
-Amplify.configure(awsExports)
-// Amplify.configure(process.env.AWS_EXPORTS);
+// Amplify.configure(awsExports)
+Amplify.configure(process.env.AWS_EXPORTS);
 
 // const formFields = {
 //   signUp: {
