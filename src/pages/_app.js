@@ -2,13 +2,12 @@ import '../styles/globals.css'
 import React from 'react'
 import Head from 'next/head'
 import { Amplify, Auth } from 'aws-amplify'
-// import awsExports from "../aws-exports"
+import awsExports from "../aws-exports"
 import { Authenticator } from '@aws-amplify/ui-react'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import '@aws-amplify/ui-react/styles.css';
 
-// Amplify.configure(awsExports)
-Amplify.configure(process.env.AWS_EXPORTS);
+Amplify.configure(awsExports)
 
 // const formFields = {
 //   signUp: {

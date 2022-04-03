@@ -20,9 +20,6 @@ import ErrorMessage from './ErrorMessage'
 import { DataStore } from 'aws-amplify'
 import { TradingCard } from '../models'
 
-// Amplify.configure(awsExports);
-// Amplify.configure(process.env.AWS_EXPORTS);
-
 const settings = ['Profile', 'Account', 'Dashboard']
 
 const ResponsiveAppBar = ({ user, signOut }) => {
@@ -84,8 +81,8 @@ const ResponsiveAppBar = ({ user, signOut }) => {
   }
 
   const handleSaveCard = async (event) => {
-    const cardToSave = JSON.parse(event.target.dataset.card);
     try {
+      const cardToSave = JSON.parse(event.target.dataset.card);
       const response = await DataStore.save(
         new TradingCard({
 
