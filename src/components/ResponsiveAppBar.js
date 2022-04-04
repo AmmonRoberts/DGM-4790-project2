@@ -53,22 +53,35 @@ const ResponsiveAppBar = ({ user, signOut }) => {
   }
 
   const handleSearch = async () => {
-    const cardSearchResults = await getCardsByName(searchTerms)
-    if (cardSearchResults.status) {
+    // const cardSearchResults = await getCardsByName(searchTerms)
+    const cardSearchResults = await fetch('/api/cards', {
+      method: 'POST',
+      body: JSON.stringify({ cardName: searchTerms }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+    let resultJson = await cardSearchResults.json()
+
+    console.log(resultJson.cards)
+
+    if (resultJson.status) {
       setError({
         isOpen: true,
-        error: cardSearchResults.error,
-        status: cardSearchResults.status
+        error: resultJson.error,
+        status: resultJson.status
       })
 
     }
     else {
-      setFetchedCardList(cardSearchResults.cards)
+      setFetchedCardList(resultJson.cards)
       setDialog({
         isOpen: true,
         fetchedCardList,
       })
     }
+
   }
 
   const handleCloseDialog = () => {
