@@ -11,6 +11,8 @@ export default async function handler(req, res) {
 
     const cardList = await response.json()
 
+    console.log(cardList)
+
     res.status(200).json(cardList)
 
     // if (response.status == 200) {
