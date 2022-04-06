@@ -64,8 +64,6 @@ const ResponsiveAppBar = ({ user, signOut }) => {
 
     let resultJson = await cardSearchResults.json()
 
-    console.log(resultJson.cards)
-
     if (resultJson.status) {
       setError({
         isOpen: true,
@@ -95,49 +93,64 @@ const ResponsiveAppBar = ({ user, signOut }) => {
 
   const handleSaveCard = async (event) => {
     try {
-      const cardToSave = JSON.parse(event.target.dataset.card);
-      const response = await DataStore.save(
-        new TradingCard({
 
-          cardId: cardToSave.id,
-          name: cardToSave.name,
-          layout: cardToSave.layout,
-          cmc: cardToSave.cmc,
-          colors: cardToSave.colors,
-          colorIdentity: cardToSave.colorIdentity,
-          type: cardToSave.type,
-          supertypes: cardToSave.supertypes,
-          types: cardToSave.types,
-          subtypes: cardToSave.subtypes,
-          rarity: cardToSave.rarity,
-          set: cardToSave.set,
-          setName: cardToSave.setName,
-          text: cardToSave.text,
-          flavor: cardToSave.flavor,
-          artist: cardToSave.artist,
-          number: cardToSave.number,
-          power: cardToSave.power,
-          toughness: cardToSave.toughness,
-          loyalty: cardToSave.loyalty,
-          language: cardToSave.language,
-          gameFormat: cardToSave.gameFormat,
-          legality: cardToSave.legality,
-          multiverseid: cardToSave.multiverseid,
-          printings: cardToSave.printings,
-          source: cardToSave.source,
-          legalities: cardToSave.legalities,
-          originalType: cardToSave.originalType,
-          originalText: cardToSave.originalText,
-          imageUrl: cardToSave.imageUrl,
-          watermark: cardToSave.watermark,
-          border: cardToSave.border,
-          reserved: cardToSave.reserved,
-          releaseDate: cardToSave.releaseDate,
+      const cardId = event.target.dataset.cardid;;
 
-        }),
-      )
+      await fetch(`/api/cards/${cardId}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(async (response) => {
+        let fetchedCardJson = await response.json()
+        let card = fetchedCardJson.cards
 
-      console.log('Card was saved!')
+        await DataStore.save(
+          new TradingCard({
+
+            cardId: card[0].id,
+            name: card[0].name,
+            layout: card[0].layout,
+            cmc: card[0].cmc,
+            colors: card[0].colors,
+            colorIdentity: card[0].colorIdentity,
+            type: card[0].type,
+            supertypes: card[0].supertypes,
+            types: card[0].types,
+            subtypes: card[0].subtypes,
+            rarity: card[0].rarity,
+            set: card[0].set,
+            setName: card[0].setName,
+            text: card[0].text,
+            flavor: card[0].flavor,
+            artist: card[0].artist,
+            number: card[0].number,
+            power: card[0].power,
+            toughness: card[0].toughness,
+            loyalty: card[0].loyalty,
+            language: card[0].language,
+            gameFormat: card[0].gameFormat,
+            legality: card[0].legality,
+            multiverseid: card[0].multiverseid,
+            printings: card[0].printings,
+            source: card[0].source,
+            legalities: card[0].legalities,
+            originalType: card[0].originalType,
+            originalText: card[0].originalText,
+            imageUrl: card[0].imageUrl,
+            watermark: card[0].watermark,
+            border: card[0].border,
+            reserved: card[0].reserved,
+            releaseDate: card[0].releaseDate,
+          }),
+        )
+
+        console.log('Card was saved!')
+      })
+
+
+
+
     } catch (err) {
       console.log('Save card error ', err)
     } finally {
