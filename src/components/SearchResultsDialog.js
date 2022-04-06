@@ -8,7 +8,6 @@ import {
   CardActions,
   IconButton,
 } from '@mui/material'
-import SaveIcon from '@mui/icons-material/Save'
 import Image from 'next/image'
 import cardBackPlaceholder from '../../public/card_back.jpg'
 import styles from "../styles/Cards.module.css";
@@ -21,6 +20,9 @@ const SearchResultsDialog = (props) => {
       maxWidth={false}
       open={open}
       onClose={onClose}
+      sx={{
+        padding: 2
+      }}
     >
       <div className={styles.searchResultCards}>
         {
