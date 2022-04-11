@@ -3,7 +3,7 @@ type Legality {
   legality: String
 }
 
-type TradingCard @model @auth(rules: [{allow: public}]) {
+type TradingCard @model @auth(rules: [{allow: owner}, {allow: private, operations: [read]}]) {
   id: ID!
   name: String
   layout: String

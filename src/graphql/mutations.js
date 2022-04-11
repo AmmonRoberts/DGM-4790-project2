@@ -47,6 +47,10 @@ export const createTradingCard = /* GraphQL */ `
       cardId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
     }
   }
 `;
@@ -96,6 +100,10 @@ export const updateTradingCard = /* GraphQL */ `
       cardId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
     }
   }
 `;
@@ -145,6 +153,10 @@ export const deleteTradingCard = /* GraphQL */ `
       cardId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
     }
   }
 `;

@@ -2,8 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateTradingCard = /* GraphQL */ `
-  subscription OnCreateTradingCard {
-    onCreateTradingCard {
+  subscription OnCreateTradingCard($owner: String) {
+    onCreateTradingCard(owner: $owner) {
       id
       name
       layout
@@ -44,12 +44,16 @@ export const onCreateTradingCard = /* GraphQL */ `
       cardId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
     }
   }
 `;
 export const onUpdateTradingCard = /* GraphQL */ `
-  subscription OnUpdateTradingCard {
-    onUpdateTradingCard {
+  subscription OnUpdateTradingCard($owner: String) {
+    onUpdateTradingCard(owner: $owner) {
       id
       name
       layout
@@ -90,12 +94,16 @@ export const onUpdateTradingCard = /* GraphQL */ `
       cardId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
     }
   }
 `;
 export const onDeleteTradingCard = /* GraphQL */ `
-  subscription OnDeleteTradingCard {
-    onDeleteTradingCard {
+  subscription OnDeleteTradingCard($owner: String) {
+    onDeleteTradingCard(owner: $owner) {
       id
       name
       layout
@@ -136,6 +144,10 @@ export const onDeleteTradingCard = /* GraphQL */ `
       cardId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
     }
   }
 `;
