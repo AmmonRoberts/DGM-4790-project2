@@ -6,10 +6,14 @@ import { TradingCard } from '../../models'
 import { Box, Card, CardMedia, CardContent, Typography, CardActions, IconButton } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import Image from 'next/image'
+import { useAuthenticator } from '@aws-amplify/ui-react'
 
 const MyCards = (props) => {
 
     const [cardList, setCardList] = React.useState([])
+    const { user } = useAuthenticator((context) => [context.user])
+
+    // console.log(user)
 
     const handleDeleteCard = async (card) => {
         try {
@@ -62,11 +66,12 @@ const MyCards = (props) => {
                         </Box>
                     </CardContent>
                     <CardActions>
-                        <IconButton aria-label="Delete card from collection"
+                        {/* {console.log(card)} */}
+                        {user.username === card.owner && (<IconButton aria-label="Delete card from collection"
                             onClick={() => { handleDeleteCard(card) }}
                         >
                             <DeleteIcon />
-                        </IconButton>
+                        </IconButton>)}
                     </CardActions>
                 </Card>
             ))}
