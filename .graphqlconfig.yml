@@ -1,15 +1,4 @@
 projects:
-  dgm4790:
-    schemaPath: src/graphql/schema.json
-    includes:
-      - src/graphql/**/*.js
-    excludes:
-      - ./amplify/**
-    extensions:
-      amplify:
-        codeGenTarget: javascript
-        generatedFileName: ''
-        docsFilePath: src/graphql
   dgm4790thesecond:
     schemaPath: src/graphql/schema.json
     includes:
@@ -21,6 +10,3 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
-extensions:
-  amplify:
-    version: 3

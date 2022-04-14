@@ -1,7 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "api": {
-        "dgm4790": {
-            "GraphQLAPIKeyOutput": "string",
+        "dgm4790thesecond": {
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }

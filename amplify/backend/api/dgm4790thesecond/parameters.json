@@ -1,8 +1,7 @@
 {
-  "AppSyncApiName": "dgm4790",
+  "AppSyncApiName": "dgm4790thesecond",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-03-28T22:04:15.330Z",
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
       "authdgm47901bda8eaa",

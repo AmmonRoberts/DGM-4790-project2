@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "dgm4790thesecond",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/mnt/stuff/GitHub/DGM4790/DGM-4790-project2/amplify/backend/api/dgm4790thesecond/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authdgm47901bda8eaa"
+    },
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    }
+  }
+}
