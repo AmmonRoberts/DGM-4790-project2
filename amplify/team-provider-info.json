@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-dgm4790-dev-155043-authRole",
-      "UnauthRoleArn": "arn:aws:iam::472797963012:role/amplify-dgm4790-dev-155043-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::472797963012:role/amplify-dgm4790-dev-155043-authRole",
+      "AuthRoleName": "amplify-dgm4790thesecond-dev-221532-authRole",
+      "UnauthRoleArn": "arn:aws:iam::472797963012:role/amplify-dgm4790thesecond-dev-221532-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::472797963012:role/amplify-dgm4790thesecond-dev-221532-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-dgm4790-dev-155043-deployment",
-      "UnauthRoleName": "amplify-dgm4790-dev-155043-unauthRole",
-      "StackName": "amplify-dgm4790-dev-155043",
-      "StackId": "arn:aws:cloudformation:us-east-2:472797963012:stack/amplify-dgm4790-dev-155043/203e4830-aee1-11ec-8e51-02691a914d08",
-      "AmplifyAppId": "d2tsr8s7cq26uz"
+      "DeploymentBucketName": "amplify-dgm4790thesecond-dev-221532-deployment",
+      "UnauthRoleName": "amplify-dgm4790thesecond-dev-221532-unauthRole",
+      "StackName": "amplify-dgm4790thesecond-dev-221532",
+      "StackId": "arn:aws:cloudformation:us-east-2:472797963012:stack/amplify-dgm4790thesecond-dev-221532/888fb7f0-bba9-11ec-9f5b-0a8e6831593e",
+      "AmplifyAppId": "d135tzyhss117y"
     },
     "categories": {
       "auth": {
-        "dgm47901bda8eaa": {}
+        "dgm4790thesecond312a466a": {}
       }
     }
   }
