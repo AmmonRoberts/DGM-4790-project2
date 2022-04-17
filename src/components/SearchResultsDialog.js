@@ -73,22 +73,4 @@ const SearchResultsDialog = (props) => {
   )
 }
 
-
-// export async function getStaticProps(props) {
-//   console.log("context = ", props)
-//   let cardList = {}
-//   try {
-//     let response = await getCardsByName(props.cardName)
-//     cardList = response.cards
-//     console.log(cardList)
-//   } catch (err) {
-//     console.log("Failed to retrieve card by id", err)
-//   }
-//   return {
-//     props: {
-//       cardList
-//     },
-//   }
-// }
-
 export default SearchResultsDialog

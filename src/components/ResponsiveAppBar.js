@@ -153,10 +153,6 @@ const ResponsiveAppBar = ({ user, signOut }) => {
 
     } catch (err) {
       console.log('Save card error ', err)
-    } finally {
-      // setDialog({
-      //   isOpen: false,
-      // })
     }
   }
 
@@ -213,10 +209,7 @@ const ResponsiveAppBar = ({ user, signOut }) => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title='Open settings'>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* <Avatar
-                  alt='Thor Anderson'
-                  src='/static/images/ThorHeadShotCropped200.png'
-                /> */}
+                {/* <Avatar /> */}
                 <Avatar
                 />
               </IconButton>
