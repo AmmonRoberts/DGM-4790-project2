@@ -13,6 +13,7 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import TextField from '@mui/material/TextField'
+import Snackbar from '@mui/material/Snackbar'
 import SearchIcon from '@mui/icons-material/Search'
 import { getCardsByName } from "../utils/api-util"
 import SearchResultsDialog from './SearchResultsDialog'
@@ -35,6 +36,25 @@ const ResponsiveAppBar = ({ user, signOut }) => {
     error: undefined,
     status: undefined
   })
+
+  const [open, setOpen] = React.useState(false)
+  const [snackBarMessage, setSnackBarMessage] = React.useState('')
+  const [snackBarSeverity, setSnackBarSeverity] = React.useState('')
+
+
+  const handleToast = (message, severity) => {
+    setSnackBarMessage(message)
+    setSnackBarSeverity(severity)
+    setOpen(true)
+  }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return
+    }
+    setOpen(false)
+  }
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget)
   }
@@ -53,7 +73,6 @@ const ResponsiveAppBar = ({ user, signOut }) => {
   }
 
   const handleSearch = async () => {
-    // const cardSearchResults = await getCardsByName(searchTerms)
     const cardSearchResults = await fetch('/api/cards', {
       method: 'POST',
       body: JSON.stringify({ cardName: searchTerms }),
@@ -79,7 +98,6 @@ const ResponsiveAppBar = ({ user, signOut }) => {
         fetchedCardList,
       })
     }
-
   }
 
   const handleCloseDialog = () => {
@@ -142,17 +160,17 @@ const ResponsiveAppBar = ({ user, signOut }) => {
             border: card[0].border,
             reserved: card[0].reserved,
             releaseDate: card[0].releaseDate,
-          }),
+          })
         )
-
         console.log('Card was saved!')
+        handleToast(`Card "${card[0].name}" was saved.`, 'success')
       })
-
-
-
-
     } catch (err) {
       console.log('Save card error ', err)
+      handleToast(
+        `Error: Card "${card[0].name}" was not saved.`,
+        'error',
+      )
     }
   }
 
@@ -253,7 +271,13 @@ const ResponsiveAppBar = ({ user, signOut }) => {
         onClose={handleCloseDialog}
         onSaveCard={handleSaveCard}
       />
-
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message={snackBarMessage}
+        severity={snackBarSeverity}
+      />
     </AppBar>
   )
 }
