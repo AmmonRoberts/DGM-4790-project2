@@ -219,6 +219,10 @@ const ResponsiveAppBar = ({ user, signOut }) => {
           </Box>
 
           <Box>
+
+          </Box>
+
+          <Box>
             <IconButton onClick={handleSearch}>
               <SearchIcon />
             </IconButton>
@@ -229,12 +233,9 @@ const ResponsiveAppBar = ({ user, signOut }) => {
               onChange={handleChange}
               onKeyUp={handleKeyUp}
               value={searchTerms}
-              sx={{ backgroundColor: 'white', flexGrow: 2, mr: 20 }}
+              sx={{ backgroundColor: 'white', flexGrow: 1, mr: 3 }}
             />
-          </Box>
-
-          <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
+            <FormControl sx={{ minWidth: 120 }}>
               <InputLabel id="searchFilterLabel">Filter</InputLabel>
               <Select
                 size="small"
@@ -244,7 +245,7 @@ const ResponsiveAppBar = ({ user, signOut }) => {
                 variant="outlined"
                 value={filter}
                 onChange={handleFilterChange}
-                sx={{ backgroundColor: 'white', flexGrow: 2, mr: 20 }}
+                sx={{ backgroundColor: 'white', flexGrow: 2, mr: 3 }}
               >
                 <MenuItem value={"Name"}>Name</MenuItem>
                 <MenuItem value={"Type"}>Type</MenuItem>
@@ -254,7 +255,7 @@ const ResponsiveAppBar = ({ user, signOut }) => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title='Open settings'>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, float: "right" }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 {/* <Avatar /> */}
                 <Avatar
                 />
