@@ -1,25 +1,28 @@
-import * as React from 'react'
-import Link from 'next/link'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
 import HomeIcon from '@mui/icons-material/Home';
-import Typography from '@mui/material/Typography'
-import Menu from '@mui/material/Menu'
-import Container from '@mui/material/Container'
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import Tooltip from '@mui/material/Tooltip'
-import MenuItem from '@mui/material/MenuItem'
-import TextField from '@mui/material/TextField'
-import Snackbar from '@mui/material/Snackbar'
-import SearchIcon from '@mui/icons-material/Search'
-import { getCardsByName } from "../utils/api-util"
-import SearchResultsDialog from './SearchResultsDialog'
-import ErrorMessage from './ErrorMessage'
-import { DataStore } from 'aws-amplify'
-import { TradingCard } from '../models'
+import SearchIcon from '@mui/icons-material/Search';
+import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import InputLabel from '@mui/material/InputLabel';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import Snackbar from '@mui/material/Snackbar';
+import TextField from '@mui/material/TextField';
+import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
+import { DataStore } from 'aws-amplify';
+import Link from 'next/link';
+import * as React from 'react';
+import { TradingCard } from '../models';
+import { getCardsByName } from "../utils/api-util";
+import ErrorMessage from './ErrorMessage';
+import SearchResultsDialog from './SearchResultsDialog';
 
 const settings = ['Profile', 'Account', 'Dashboard']
 
@@ -71,6 +74,12 @@ const ResponsiveAppBar = ({ user, signOut }) => {
       handleSearch();
     }
   }
+
+  const [filter, setFilter] = React.useState('');
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  };
 
   const handleSearch = async () => {
     const cardSearchResults = await fetch('/api/cards', {
@@ -224,9 +233,28 @@ const ResponsiveAppBar = ({ user, signOut }) => {
             />
           </Box>
 
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="searchFilterLabel">Filter</InputLabel>
+              <Select
+                size="small"
+                labelId="searchFilterLabel"
+                id="searchFilter"
+                label="Filter"
+                variant="outlined"
+                value={filter}
+                onChange={handleFilterChange}
+                sx={{ backgroundColor: 'white', flexGrow: 2, mr: 20 }}
+              >
+                <MenuItem value={"Name"}>Name</MenuItem>
+                <MenuItem value={"Type"}>Type</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title='Open settings'>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, float: "right" }}>
                 {/* <Avatar /> */}
                 <Avatar
                 />
