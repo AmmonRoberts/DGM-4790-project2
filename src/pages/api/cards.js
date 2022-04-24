@@ -3,10 +3,12 @@
 export default async function handler(req, res) {
   if (req.method === 'POST') {
 
-    const cardName = req.body.cardName
-
+    let { searchString, filter } = req.body
+    if (filter === "") {
+      filter = "name";
+    }
     const response = await fetch(
-      `https://api.magicthegathering.io/v1/cards?name=${cardName}&contains=imageUrl&pagesize=15&orderby=name`
+      `https://api.magicthegathering.io/v1/cards?${filter.toLowerCase()}=${searchString}&contains=imageUrl&pagesize=15&orderby=name`
     )
 
     const cardList = await response.json()

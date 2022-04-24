@@ -84,7 +84,7 @@ const ResponsiveAppBar = ({ user, signOut }) => {
   const handleSearch = async () => {
     const cardSearchResults = await fetch('/api/cards', {
       method: 'POST',
-      body: JSON.stringify({ cardName: searchTerms }),
+      body: JSON.stringify({ searchString: searchTerms, filter: filter }),
       headers: {
         'Content-Type': 'application/json'
       }
