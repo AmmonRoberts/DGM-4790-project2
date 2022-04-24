@@ -11,6 +11,7 @@ import {
 
 
 const Profile = (props) => {
+    const { open, onClose, user } = props
 
     return (
         <Dialog
