@@ -23,8 +23,7 @@ import { TradingCard } from '../models';
 import { getCardsByName } from "../utils/api-util";
 import ErrorMessage from './ErrorMessage';
 import SearchResultsDialog from './SearchResultsDialog';
-
-const settings = ['Profile', 'Account', 'Dashboard']
+import Profile from './Profile';
 
 const ResponsiveAppBar = ({ user, signOut }) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -43,30 +42,40 @@ const ResponsiveAppBar = ({ user, signOut }) => {
   const [open, setOpen] = React.useState(false)
   const [snackBarMessage, setSnackBarMessage] = React.useState('')
   const [snackBarSeverity, setSnackBarSeverity] = React.useState('')
+  const [filter, setFilter] = React.useState('');
+  const [openProfile, setOpenProfile] = React.useState(false);
 
 
   const handleToast = (message, severity) => {
-    setSnackBarMessage(message)
-    setSnackBarSeverity(severity)
-    setOpen(true)
+    setSnackBarMessage(message);
+    setSnackBarSeverity(severity);
+    setOpen(true);
   }
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
-      return
+      return;
     }
-    setOpen(false)
+    setOpen(false);
+  }
+
+  const handleCloseProfile = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenProfile(false);
   }
 
   const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget)
+    setAnchorElUser(event.currentTarget);
   }
+
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
+    setAnchorElUser(null);
   }
 
   const handleChange = (event) => {
-    setSearchTerms(event.target.value)
+    setSearchTerms(event.target.value);
   }
 
   const handleKeyUp = (event) => {
@@ -75,11 +84,14 @@ const ResponsiveAppBar = ({ user, signOut }) => {
     }
   }
 
-  const [filter, setFilter] = React.useState('');
-
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
   };
+
+  const handleOpenProfile = () => {
+    setOpenProfile(true);
+    handleCloseUserMenu();
+  }
 
   const handleSearch = async () => {
     const cardSearchResults = await fetch('/api/cards', {
@@ -277,11 +289,7 @@ const ResponsiveAppBar = ({ user, signOut }) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting}>
-                  <Typography textAlign='center'>{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleOpenProfile}>Profile</MenuItem>
               <MenuItem onClick={signOut}>Logout</MenuItem>
             </Menu>
           </Box>
@@ -306,6 +314,11 @@ const ResponsiveAppBar = ({ user, signOut }) => {
         onClose={handleClose}
         message={snackBarMessage}
         severity={snackBarSeverity}
+      />
+      <Profile
+        open={openProfile}
+        onClose={handleCloseProfile}
+        user={user}
       />
     </AppBar>
   )
