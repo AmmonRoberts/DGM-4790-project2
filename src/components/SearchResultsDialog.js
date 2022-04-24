@@ -9,7 +9,7 @@ import {
   IconButton,
 } from '@mui/material'
 import Image from 'next/image'
-import cardBackPlaceholder from '../../public/card_back.jpg'
+import PlayingCard from './PlayingCard'
 import styles from "../styles/Cards.module.css";
 
 const SearchResultsDialog = (props) => {
@@ -45,22 +45,8 @@ const SearchResultsDialog = (props) => {
                     boxShadow: 10,
                   }
                 }}>
-                <CardContent>
-                  <Box>
-                    <Typography variant="subtitle1" color="textSecondary">
-                      {card.name}
-                    </Typography>
-                    <Typography variant="subtitle2" color="textSecondary">
-                      {card.setName} ({card.set})
-                    </Typography>
-                    <Image
-                      src={card.imageUrl || cardBackPlaceholder}
-                      placeholder={cardBackPlaceholder}
-                      width={223}
-                      height={310}
-                      alt={card.name} />
-                  </Box>
-                </CardContent>
+                <PlayingCard
+                  card={card} />
                 <CardActions>
                   <IconButton data-cardid={card.id} aria-label="Save to list" onClick={onSaveCard}>
                     <SvgIcon data-cardid={card.id} >

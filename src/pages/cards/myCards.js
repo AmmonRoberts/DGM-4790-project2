@@ -1,12 +1,11 @@
 import * as React from 'react'
 import Amplify, { DataStore } from "aws-amplify"
-import cardBackPlaceholder from '../../../public/card_back.jpg'
 import useSWR from "swr"
 import { TradingCard } from '../../models'
 import { Box, Card, CardMedia, CardContent, Typography, CardActions, IconButton } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
-import Image from 'next/image'
 import { useAuthenticator } from '@aws-amplify/ui-react'
+import PlayingCard from '../../components/PlayingCard'
 
 const MyCards = (props) => {
 
@@ -48,22 +47,8 @@ const MyCards = (props) => {
         <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
             {cardList && cardList.map((card) => (
                 <Card key={card.id} sx={{ maxWidth: 300, m: 1 }}>
-                    <CardContent>
-                        <Box>
-                            <Typography variant="subtitle1" color="textSecondary">
-                                {card.name}
-                            </Typography>
-                            <Typography variant="subtitle2" color="textSecondary">
-                                {card.setName} ({card.set})
-                            </Typography>
-                            <Image
-                                src={card.imageUrl || cardBackPlaceholder}
-                                placeholder={cardBackPlaceholder}
-                                width={223}
-                                height={310}
-                                alt={card.name} />
-                        </Box>
-                    </CardContent>
+                    <PlayingCard
+                        card={card} />
                     <CardActions>
                         {user.username === card.owner && (
                             <IconButton aria-label="Delete card from collection"
