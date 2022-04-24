@@ -26,7 +26,13 @@ const SearchResultsDialog = (props) => {
     >
       <div className={styles.searchResultCards}>
         {
-          cardList.map(card => {
+          cardList.length === 0 && (
+            <Typography variant="h5" color="textSecondary">
+              No cards found, try searching something else!
+            </Typography>
+          )}
+        {
+          cardList && cardList.map(card => {
             return (
               <Card key={card.id}
                 className={styles.searchResultCard}
@@ -34,13 +40,11 @@ const SearchResultsDialog = (props) => {
                   maxWidth: 300,
                   m: 1,
                   boxShadow: 3,
-                  '&:hover':
-                  {
+                  '&:hover': {
                     cursor: 'pointer',
                     boxShadow: 10,
                   }
                 }}>
-
                 <CardContent>
                   <Box>
                     <Typography variant="subtitle1" color="textSecondary">

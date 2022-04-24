@@ -67,11 +67,15 @@ const MyCards = (props) => {
                     </CardContent>
                     <CardActions>
                         {/* {console.log(card)} */}
-                        {user.username === card.owner && (<IconButton aria-label="Delete card from collection"
-                            onClick={() => { handleDeleteCard(card) }}
-                        >
-                            <DeleteIcon />
-                        </IconButton>)}
+                        {user.username === card.owner &&
+                            (
+                                <IconButton aria-label="Delete card from collection"
+                                    onClick={() => { handleDeleteCard(card) }}
+                                >
+                                    <DeleteIcon />
+                                </IconButton>
+                            )
+                        }
                     </CardActions>
                 </Card>
             ))}
