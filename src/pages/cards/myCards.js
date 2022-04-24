@@ -48,7 +48,6 @@ const MyCards = (props) => {
         <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
             {cardList && cardList.map((card) => (
                 <Card key={card.id} sx={{ maxWidth: 300, m: 1 }}>
-                    {<CardMedia component="img" image={card.Poster} title={card.Title} />}
                     <CardContent>
                         <Box>
                             <Typography variant="subtitle1" color="textSecondary">
@@ -66,16 +65,12 @@ const MyCards = (props) => {
                         </Box>
                     </CardContent>
                     <CardActions>
-                        {/* {console.log(card)} */}
-                        {user.username === card.owner &&
-                            (
-                                <IconButton aria-label="Delete card from collection"
-                                    onClick={() => { handleDeleteCard(card) }}
-                                >
-                                    <DeleteIcon />
-                                </IconButton>
-                            )
-                        }
+                        {user.username === card.owner && (
+                            <IconButton aria-label="Delete card from collection"
+                                onClick={() => { handleDeleteCard(card) }}>
+                                <DeleteIcon />
+                            </IconButton>
+                        )}
                     </CardActions>
                 </Card>
             ))}
