@@ -1,14 +1,11 @@
 import {
-  Box,
   Card,
-  CardContent,
   SvgIcon,
   Dialog,
   Typography,
   CardActions,
   IconButton,
 } from '@mui/material'
-import Image from 'next/image'
 import PlayingCard from './PlayingCard'
 import styles from "../styles/Cards.module.css";
 

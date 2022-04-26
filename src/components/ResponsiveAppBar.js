@@ -1,4 +1,3 @@
-import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
@@ -15,12 +14,10 @@ import Snackbar from '@mui/material/Snackbar';
 import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
 import { DataStore } from 'aws-amplify';
 import Link from 'next/link';
 import * as React from 'react';
 import { TradingCard } from '../models';
-import { getCardsByName } from "../utils/api-util";
 import ErrorMessage from './ErrorMessage';
 import SearchResultsDialog from './SearchResultsDialog';
 import Profile from './Profile';

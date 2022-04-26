@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Amplify, { DataStore } from "aws-amplify"
+import { DataStore } from "aws-amplify"
 import useSWR from "swr"
 import { TradingCard } from '../../models'
-import { Box, Card, CardMedia, CardContent, Typography, CardActions, IconButton } from '@mui/material'
+import { Box, Card, CardActions, IconButton } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAuthenticator } from '@aws-amplify/ui-react'
 import PlayingCard from '../../components/PlayingCard'
@@ -11,8 +11,6 @@ const MyCards = (props) => {
 
     const [cardList, setCardList] = React.useState([])
     const { user } = useAuthenticator((context) => [context.user])
-
-    // console.log(user)
 
     const handleDeleteCard = async (card) => {
         try {
@@ -60,8 +58,6 @@ const MyCards = (props) => {
                 </Card>
             ))}
         </Box>)
-
-
 }
 
 export default MyCards;
