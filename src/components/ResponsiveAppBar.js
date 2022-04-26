@@ -21,6 +21,7 @@ import { TradingCard } from '../models';
 import ErrorMessage from './ErrorMessage';
 import SearchResultsDialog from './SearchResultsDialog';
 import Profile from './Profile';
+import { Alert } from '@mui/material';
 
 const ResponsiveAppBar = ({ user, signOut }) => {
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -34,14 +35,13 @@ const ResponsiveAppBar = ({ user, signOut }) => {
     isOpen: false,
     error: undefined,
     status: undefined
-  })
+  });
 
-  const [open, setOpen] = React.useState(false)
-  const [snackBarMessage, setSnackBarMessage] = React.useState('')
-  const [snackBarSeverity, setSnackBarSeverity] = React.useState('')
+  const [open, setOpen] = React.useState(false);
+  const [snackBarMessage, setSnackBarMessage] = React.useState('');
+  const [snackBarSeverity, setSnackBarSeverity] = React.useState('');
   const [filter, setFilter] = React.useState('');
   const [openProfile, setOpenProfile] = React.useState(false);
-
 
   const handleToast = (message, severity) => {
     setSnackBarMessage(message);
@@ -307,11 +307,14 @@ const ResponsiveAppBar = ({ user, signOut }) => {
       />
       <Snackbar
         open={open}
-        autoHideDuration={6000}
         onClose={handleClose}
-        message={snackBarMessage}
-        severity={snackBarSeverity}
-      />
+        autoHideDuration={6000}
+      >
+        <Alert
+          onClose={handleClose}
+          severity={snackBarSeverity}
+        >{snackBarMessage}</Alert>
+      </Snackbar>
       <Profile
         open={openProfile}
         onClose={handleCloseProfile}
