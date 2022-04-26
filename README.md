@@ -8,3 +8,4 @@ This is a Next.js app I built for my DGM4790 course at UVU. This app uses the MT
 - Cards can be saved to a shared collection
 - Cards can be deleted from the collection
   - Only the "owner" of a card may delete it
+- Profile page showing user's email address
