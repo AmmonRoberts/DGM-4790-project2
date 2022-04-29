@@ -162,9 +162,6 @@ const ResponsiveAppBar = ({ user, signOut }) => {
             originalText: card[0].originalText,
             imageUrl: card[0].imageUrl,
             watermark: card[0].watermark,
-            border: card[0].border,
-            reserved: card[0].reserved,
-            releaseDate: card[0].releaseDate,
           })
         )
         console.log('Card was saved!')

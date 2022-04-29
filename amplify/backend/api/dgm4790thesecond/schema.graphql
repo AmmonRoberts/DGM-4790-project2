@@ -23,9 +23,6 @@ type TradingCard @model @auth(rules: [{allow: owner}, {allow: private, operation
   originalText: String
   imageUrl: String
   watermark: String
-  border: String
-  reserved: String
-  releaseDate: String
   cardId: String
 }
  

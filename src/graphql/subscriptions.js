@@ -6,41 +6,23 @@ export const onCreateTradingCard = /* GraphQL */ `
     onCreateTradingCard(owner: $owner) {
       id
       name
-      layout
-      cmc
-      colors
-      colorIdentity
       type
       supertypes
       types
       subtypes
-      rarity
       set
       setName
       text
       flavor
-      artist
-      number
-      power
-      toughness
-      loyalty
-      language
       gameFormat
       legality
       multiverseid
       printings
       source
-      legalities {
-        format
-        legality
-      }
       originalType
       originalText
       imageUrl
       watermark
-      border
-      reserved
-      releaseDate
       cardId
       createdAt
       updatedAt
@@ -56,41 +38,23 @@ export const onUpdateTradingCard = /* GraphQL */ `
     onUpdateTradingCard(owner: $owner) {
       id
       name
-      layout
-      cmc
-      colors
-      colorIdentity
       type
       supertypes
       types
       subtypes
-      rarity
       set
       setName
       text
       flavor
-      artist
-      number
-      power
-      toughness
-      loyalty
-      language
       gameFormat
       legality
       multiverseid
       printings
       source
-      legalities {
-        format
-        legality
-      }
       originalType
       originalText
       imageUrl
       watermark
-      border
-      reserved
-      releaseDate
       cardId
       createdAt
       updatedAt
@@ -106,41 +70,23 @@ export const onDeleteTradingCard = /* GraphQL */ `
     onDeleteTradingCard(owner: $owner) {
       id
       name
-      layout
-      cmc
-      colors
-      colorIdentity
       type
       supertypes
       types
       subtypes
-      rarity
       set
       setName
       text
       flavor
-      artist
-      number
-      power
-      toughness
-      loyalty
-      language
       gameFormat
       legality
       multiverseid
       printings
       source
-      legalities {
-        format
-        legality
-      }
       originalType
       originalText
       imageUrl
       watermark
-      border
-      reserved
-      releaseDate
       cardId
       createdAt
       updatedAt

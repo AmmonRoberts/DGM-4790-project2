@@ -17,36 +17,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "layout": {
-                    "name": "layout",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "cmc": {
-                    "name": "cmc",
-                    "isArray": false,
-                    "type": "Float",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "colors": {
-                    "name": "colors",
-                    "isArray": true,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true
-                },
-                "colorIdentity": {
-                    "name": "colorIdentity",
-                    "isArray": true,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true
-                },
                 "type": {
                     "name": "type",
                     "isArray": false,
@@ -78,13 +48,6 @@ export const schema = {
                     "attributes": [],
                     "isArrayNullable": true
                 },
-                "rarity": {
-                    "name": "rarity",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "set": {
                     "name": "set",
                     "isArray": false,
@@ -108,48 +71,6 @@ export const schema = {
                 },
                 "flavor": {
                     "name": "flavor",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "artist": {
-                    "name": "artist",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "number": {
-                    "name": "number",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "power": {
-                    "name": "power",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "toughness": {
-                    "name": "toughness",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "loyalty": {
-                    "name": "loyalty",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "language": {
-                    "name": "language",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -192,16 +113,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "legalities": {
-                    "name": "legalities",
-                    "isArray": true,
-                    "type": {
-                        "nonModel": "Legality"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true
-                },
                 "originalType": {
                     "name": "originalType",
                     "isArray": false,
@@ -225,27 +136,6 @@ export const schema = {
                 },
                 "watermark": {
                     "name": "watermark",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "border": {
-                    "name": "border",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "reserved": {
-                    "name": "reserved",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "releaseDate": {
-                    "name": "releaseDate",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -332,5 +222,5 @@ export const schema = {
             }
         }
     },
-    "version": "9465487f02e5e00ba09a70e15a0440b1"
+    "version": "fcc99f11b7d87f7abf8ef6de738f1950"
 };

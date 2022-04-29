@@ -6,41 +6,23 @@ export const getTradingCard = /* GraphQL */ `
     getTradingCard(id: $id) {
       id
       name
-      layout
-      cmc
-      colors
-      colorIdentity
       type
       supertypes
       types
       subtypes
-      rarity
       set
       setName
       text
       flavor
-      artist
-      number
-      power
-      toughness
-      loyalty
-      language
       gameFormat
       legality
       multiverseid
       printings
       source
-      legalities {
-        format
-        legality
-      }
       originalType
       originalText
       imageUrl
       watermark
-      border
-      reserved
-      releaseDate
       cardId
       createdAt
       updatedAt
@@ -61,41 +43,23 @@ export const listTradingCards = /* GraphQL */ `
       items {
         id
         name
-        layout
-        cmc
-        colors
-        colorIdentity
         type
         supertypes
         types
         subtypes
-        rarity
         set
         setName
         text
         flavor
-        artist
-        number
-        power
-        toughness
-        loyalty
-        language
         gameFormat
         legality
         multiverseid
         printings
         source
-        legalities {
-          format
-          legality
-        }
         originalType
         originalText
         imageUrl
         watermark
-        border
-        reserved
-        releaseDate
         cardId
         createdAt
         updatedAt
@@ -125,41 +89,23 @@ export const syncTradingCards = /* GraphQL */ `
       items {
         id
         name
-        layout
-        cmc
-        colors
-        colorIdentity
         type
         supertypes
         types
         subtypes
-        rarity
         set
         setName
         text
         flavor
-        artist
-        number
-        power
-        toughness
-        loyalty
-        language
         gameFormat
         legality
         multiverseid
         printings
         source
-        legalities {
-          format
-          legality
-        }
         originalType
         originalText
         imageUrl
         watermark
-        border
-        reserved
-        releaseDate
         cardId
         createdAt
         updatedAt
