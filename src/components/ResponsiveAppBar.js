@@ -130,7 +130,7 @@ const ResponsiveAppBar = ({ user, signOut }) => {
   const handleSaveCard = async (event) => {
     try {
 
-      const cardId = event.target.dataset.cardid;;
+      const cardId = event.currentTarget.dataset.cardid;;
 
       await fetch(`/api/cards/${cardId}`, {
         method: 'GET',
