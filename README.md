@@ -21,10 +21,13 @@ npm run dev
 
 
 # Features
-- Searches for cards and returns a list of matches
+- [Searches](https://github.com/AmmonRoberts/DGM-4790-project2/blob/main/src/components/SearchResultsDialog.js) for cards and returns a list of matches
   - Searches can be filtered by card name or card type
     - Searching by name is the default
-- Cards can be saved to a shared collection
+- [Cards](https://github.com/AmmonRoberts/DGM-4790-project2/blob/main/src/components/PlayingCard.js) can be saved to a shared collection
 - Cards can be deleted from the collection
   - Only the "owner" of a card may delete it
-- Profile page showing user's email address
+- [Profile page](https://github.com/AmmonRoberts/DGM-4790-project2/blob/main/src/components/Profile.js) showing user's email address
+- Uses [Next.js API](https://github.com/AmmonRoberts/DGM-4790-project2/tree/main/src/pages/api) to retrieve card data
+- Stores saved cards in DynamoDB using AWS AppSync
+- Uses AWS Cognito to manage authentication and authorization
